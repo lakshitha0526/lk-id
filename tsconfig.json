@@ -15,7 +15,9 @@
     "declarationMap": true,
     "sourceMap": true,
     "outDir": "dist",
-    "rootDir": "src"
+    "rootDir": "src",
+    // TODO: remove when tsup/rollup-plugin-dts no longer triggers baseUrl deprecation in TS 6+
+    "ignoreDeprecations": "6.0"
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
