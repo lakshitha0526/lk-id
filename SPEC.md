@@ -225,18 +225,18 @@ export type NICResult =
 
 | Input | Expected |
 |---|---|
-| `851234567V` | valid, old, 1985, male, day 123 → May 3 1985, voter |
-| `855010567V` | valid, old, 1985, female, day 1 (500 subtracted) → wait, this is `501` not `5010` |
-| `855015675V` | length too long, invalid |
-| `200012345V` | valid, old, **1900**, male, day 001 (Jan 1 1900) — document the 2000 ambiguity |
-| `198512345678` | valid, new, 1985, male, day 123, serial 5678 |
-| `198540012345` | day code 400 invalid (367–500 gap), invalid |
-| `198550112345` | day 1 female, valid |
-| `198536612345` | day 366 in non-leap year 1985, invalid |
-| `198836612345` | day 366 in leap year 1988, valid |
-| `   851234567v   ` | whitespace + lowercase v handled, valid |
-| `85-123-4567-V` | reject; only strict format accepted in v1 |
-| empty string | invalid |
+| `851234567V` | valid, old format, year 1985, male, day 123 (3 May 1985), voter, serial 456 |
+| `855010567V` | valid, old format, year 1985, female, day 1 (1 Jan 1985), voter, serial 056 |
+| `8550156751V` | invalid: length |
+| `000012345V` | valid, old format, year 1900, male, day 1 (1 Jan 1900), voter, serial 234 — code comment must note the 1900/2000 ambiguity |
+| `198512345678` | valid, new format, year 1985, male, day 123, serial 4567 |
+| `198540012345` | invalid: day code 400 is in the 367–500 dead zone |
+| `198550112345` | valid, new format, year 1985, female, day 1, serial 1234 |
+| `198536612345` | invalid: day 366 in non-leap year 1985 |
+| `198836612345` | valid, new format, year 1988 (leap year), male, day 366 (31 Dec 1988), serial 1234 |
+| `   851234567v   ` | valid, normalised to `851234567V`, same result as row 1 |
+| `85-123-4567-V` | invalid: only strict format accepted in v1 (no separators) |
+| (empty string) | invalid |
 | `abcdefghij` | invalid |
 
 Add at least 25 test cases total covering every branch.
