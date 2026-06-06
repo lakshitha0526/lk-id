@@ -1,3 +1,4 @@
+export { type BRNResult, isValidBRN, parseBRN } from './brn';
 export { isValidNIC, type NICResult, parseNIC } from './nic';
 export {
   isValidPassport,
