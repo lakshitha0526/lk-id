@@ -1,9 +1,15 @@
 # `lk-id` — Implementation Plan (v1.0.0)
 
-**Status:** Draft
+**Status:** Final
 **Owner:** Lakshitha
-**Last updated:** 05 Jun 2026
+**Last updated:** 06 Jun 2026
 **Target release:** ~5 weekends from start
+
+---
+
+**Status:** ✅ Shipped 06 Jun 2026 — published as `lk-id@1.0.1` on npm
+**Repository:** https://github.com/lakshitha0526/lk-id
+**npm:** https://www.npmjs.com/package/lk-id
 
 ---
 
@@ -587,15 +593,17 @@ Five-weekend plan. Adjust based on actual weekend availability.
 
 ---
 
-## 15. Definition of done (v1.0.0)
+## 15. Definition of done (v1.0.0) — completed v1.0.1
 
-- [ ] All five validators implemented
-- [ ] 90%+ test coverage
-- [ ] CI green on `main`
-- [ ] README has working examples for each validator
-- [ ] MNP caveat and check-digit limitations documented
-- [ ] Published on npm with provenance
-- [ ] Tagged `v1.0.0` on GitHub with release notes
-- [ ] Pre-publish sandbox test passed (ESM + CJS + types)
+- [x] All five validators implemented
+- [x] 90%+ test coverage
+- [x] CI green on `main`
+- [x] README has working examples for each validator
+- [x] MNP caveat and check-digit limitations documented
+- [x] Published on npm with provenance
+- [x] Tagged `v1.0.0` on GitHub with release notes
+- [x] Pre-publish sandbox test passed (ESM + CJS + types)
 
 Tick these off as you go. When all are ticked, v1.0.0 is done — don't keep polishing, ship and move on to v1.1 or `lk-sms`.
+
+> All criteria met. v1.0.0 was published to npm but in a broken state due to a partial-failure publishing pipeline issue; the recovery was published as v1.0.1, which is otherwise identical to the intended v1.0.0 release. See `CHANGELOG.md` for the full sequence. v1.0.0 is deprecated on npm with a visible warning.
