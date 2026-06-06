@@ -268,8 +268,10 @@ All of these normalise to `+94771234567`:
    - Otherwise: invalid
 3. Validate length is exactly 12 chars (`+94` + 9 digits).
 4. Extract the two-digit prefix after `+94`. Must be one of: `70`, `71`, `72`, `74`, `75`, `76`, `77`, `78`.
-5. Look up original operator from `data/mobile-operators.json`.
+5. Look up operator from `data/mobile-operators.json`.
 6. Return success object.
+
+MNP context: As of June 2026, Sri Lanka has not implemented Mobile Number Portability despite repeated announcements (latest target: August 2026). The prefix-to-operator mapping is currently authoritative. When MNP launches, the library will need a major version bump to rename `operator` → `originalOperator` and add an `mnpStatus` field. See docs/mobile-operator-research.md for full context.
 
 #### Return type
 
@@ -278,11 +280,10 @@ export type MobileResult =
   | { valid: false; reason: string }
   | {
       valid: true;
-      e164: string;                  // e.g., "+94771234567"
-      local: string;                  // e.g., "0771234567"
-      prefix: string;                 // e.g., "77"
-      originalOperator: string;       // e.g., "Dialog"
-      operatorCaveat: string;         // standard MNP caveat string
+      e164: string;    // e.g., "+94771234567"
+      local: string;   // e.g., "0771234567"
+      prefix: string;  // e.g., "77"
+      operator: string; // e.g., "Dialog"
     };
 ```
 
