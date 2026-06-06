@@ -4,3 +4,4 @@ export {
   type PassportResult,
   parsePassport,
 } from './passport';
+export { isValidTIN, parseTIN, type TINResult } from './tin';
