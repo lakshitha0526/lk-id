@@ -148,11 +148,11 @@ Rationale: discriminated unions force consumers to handle failure paths. Excepti
 ### 7.2 Public exports (`src/index.ts`)
 
 ```ts
-export { parseNIC, isValidNIC, type NICResult } from './nic';
-export { parseMobile, isValidMobile, type MobileResult } from './mobile';
-export { parsePassport, isValidPassport, type PassportResult } from './passport';
-export { parseTIN, isValidTIN, type TINResult } from './tin';
-export { parseBRN, isValidBRN, type BRNResult } from './brn';
+export { isValidNIC, type NICResult, parseNIC } from './nic';
+export { isValidMobile, parseMobile, type MobileResult } from './mobile';
+export { isValidPassport, parsePassport, type PassportResult } from './passport';
+export { isValidTIN, parseTIN, type TINResult } from './tin';
+export { isValidBRN, parseBRN, type BRNResult } from './brn';
 ```
 
 No default export. Named exports only.

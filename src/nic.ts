@@ -23,6 +23,11 @@ function dayOfYearToDate(year: number, dayOfYear: number): Date | null {
   return date;
 }
 
+// TODO(v1.x): a new-format NIC whose year equals the current year can produce
+// a future calendar date if the day code places the birthday later in the year
+// (e.g. "born 31 Dec 2026" parsed on 15 Jun 2026). computeAge would return -1.
+// Realistically impossible (no such NIC would exist yet), but logically reachable.
+// Consider adding a guard: if (age < 0) return { valid: false, reason: 'date in future' }.
 function computeAge(dateOfBirth: Date): number {
   const now = new Date();
   let age = now.getUTCFullYear() - dateOfBirth.getUTCFullYear();
