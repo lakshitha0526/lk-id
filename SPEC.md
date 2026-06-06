@@ -317,7 +317,7 @@ One letter (typically `N`) followed by 7 digits, e.g., `N1234567`.
 
 #### Algorithm
 
-1. Trim and uppercase input.
+1. Trim and strip internal whitespace; uppercase input.
 2. Match against `/^[A-Z]\d{7}$/`.
 3. Return success or failure.
 
