@@ -2,8 +2,6 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
-    // TODO: remove when src/nic.test.ts exists (Step D)
-    passWithNoTests: true,
     coverage: {
       provider: 'v8',
       thresholds: {
