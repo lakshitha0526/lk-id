@@ -1,6 +1,6 @@
 {
   "name": "lk-id",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sri Lankan identity validators (NIC, mobile, passport, TIN, BRN)",
   "keywords": ["sri-lanka", "nic", "validation", "identity", "lk"],
   "license": "MIT",
