@@ -4,6 +4,15 @@
   "description": "Sri Lankan identity validators (NIC, mobile, passport, TIN, BRN)",
   "keywords": ["sri-lanka", "nic", "validation", "identity", "lk"],
   "license": "MIT",
+  "author": "Lakshitha",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lakshitha0526/lk-id.git"
+  },
+  "homepage": "https://github.com/lakshitha0526/lk-id#readme",
+  "bugs": {
+    "url": "https://github.com/lakshitha0526/lk-id/issues"
+  },
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
